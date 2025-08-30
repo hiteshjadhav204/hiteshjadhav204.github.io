@@ -10,17 +10,20 @@
     header h1 { margin: 0; font-size: 2.5em; }
     header p { margin: 5px 0; font-size: 1.2em; color: #ecf0f1; }
 
-    nav { background: #34495e; padding: 10px; text-align: center; }
+    nav { background: #34495e; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
     nav a:hover { color: #1abc9c; }
 
-    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+    section { padding: 50px 20px; max-width: 1100px; margin: auto; }
     h2 { color: #2c3e50; border-bottom: 2px solid #1abc9c; display: inline-block; margin-bottom: 20px; }
     .card { background: white; padding: 20px; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
 
     ul { line-height: 1.8; }
     a { color: #1abc9c; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .grid-item { background: #f9f9f9; padding: 15px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
     footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px; }
   </style>
@@ -60,3 +63,101 @@
         <li><b>Languages:</b> Python, SQL</li>
         <li><b>Libraries:</b> NumPy, Pandas, Matplotlib, Seaborn</li>
         <li><b>Visualization:</b> Power BI, Tableau, Excel</li>
+        <li><b>Techniques:</b> Data Cleaning, EDA, Visualization</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card grid">
+      <div class="grid-item">
+        <h3>✈️ Flight Price Analysis</h3>
+        <p>Exploratory Data Analysis using Python.</p>
+      </div>
+      <div class="grid-item">
+        <h3>🍷 Wine Quality Analysis</h3>
+        <p>Correlation study between chemical properties & wine quality.</p>
+      </div>
+      <div class="grid-item">
+        <h3>🛒 Sales Dashboard</h3>
+        <p>Interactive Power BI Dashboard for sales insights.</p>
+      </div>
+      <div class="grid-item">
+        <h3>💳 UPI Transactions Dashboard</h3>
+        <p>Tableau Dashboard analyzing UPI transaction patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="card grid">
+
+      <div class="grid-item">
+        <h3>Python Programming</h3>
+        <a href="certificates/Programming with Python Training - Certificate of Completion.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Digital Marketing</h3>
+        <a href="certificates/The Fundamentals of Digital Marketing.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>MATLAB Workshop</h3>
+        <a href="certificates/CERTIFICATE1 Awareness Program on MATLAB-HITESH.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Thermal Engineering</h3>
+        <a href="certificates/BITS.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Renewable Energy</h3>
+        <a href="certificates/Renewable Energy Certificate Newest Hitesh Jadhav.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>SQL Course</h3>
+        <a href="certificates/p_Hitesh Nitin Jadhav_SQL Course.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Java Nano Degree</h3>
+        <a href="certificates/p_Hitesh Nitin Jadhav_Java Nano Degree Course.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Operating Systems</h3>
+        <a href="certificates/p_Hitesh Nitin Jadhav_Operating Systems Course.pdf" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="grid-item">
+        <h3>Nanotechnology Poster</h3>
+        <a href="certificates/UBARGIT_NW_0300.pdf" target="_blank">View Certificate</a>
+      </div>
+
+    </div>
+    <p style="margin-top:20px; font-style:italic; text-align:center;">(Click on a certificate to view/download PDF)</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>📧 Email: <a href="mailto:hiteshjadhav924@gmail.com">hiteshjadhav924@gmail.com</a></p>
+      <p>💼 LinkedIn: <a href="http://www.linkedin.com/in/hitesh-jadhav-8aa81a343" target="_blank">Hitesh Jadhav</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Hitesh Jadhav | Portfolio Website</p>
+  </footer>
+
+</body>
+</html>

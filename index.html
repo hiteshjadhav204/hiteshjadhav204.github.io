@@ -5,66 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hitesh Jadhav - Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f9; color: #333; }
-    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
-    section { padding: 40px; max-width: 900px; margin: auto; }
-    h1, h2 { color: #2c3e50; }
-    .card { background: white; padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    footer { text-align: center; padding: 20px; background: #2c3e50; color: white; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f4f6f9; color: #333; }
+    header { background: #2c3e50; color: white; padding: 40px 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.5em; }
+    header p { margin: 5px 0; font-size: 1.2em; color: #ecf0f1; }
+
+    nav { background: #34495e; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #1abc9c; }
+
+    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #2c3e50; border-bottom: 2px solid #1abc9c; display: inline-block; margin-bottom: 20px; }
+    .card { background: white; padding: 20px; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+
+    ul { line-height: 1.8; }
+    a { color: #1abc9c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 40px; }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <h1>Hitesh Jadhav</h1>
     <p>Mechanical Engineer → Aspiring Data Analyst</p>
   </header>
 
-  <section>
-    <div class="card">
-      <h2>About Me</h2>
-      <p>Hi, my name is Hitesh. I am transitioning into the field of Data Science with strong skills in data analysis, visualization, and problem-solving.</p>
-    </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
     <div class="card">
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, SQL</li>
-        <li>NumPy, Pandas, Matplotlib, Seaborn</li>
-        <li>Power BI, Tableau, Excel</li>
-        <li>Data Cleaning, EDA, Visualization</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li>Flight Price Analysis (Python EDA)</li>
-        <li>Wine Quality Analysis (Python EDA)</li>
-        <li>Sales Dashboard (Power BI)</li>
-        <li>UPI Transactions Dashboard (Tableau)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Smart India Hackathon – Smart Street Light Sensors</li>
-        <li>Published paper: A Review on Mecanum Wheel for Forklifting</li>
-        <li>Workshops: Renewable Energy, MATLAB, Thermal Engineering</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: hiteshjadhav924@gmail.com</p>
-      <p>LinkedIn: <a href="http://www.linkedin.com/in/hitesh-jadhav-8aa81a343" target="_blank">Hitesh Jadhav</a></p>
+      <p>I am a Mechanical Engineer currently transitioning into the field of <b>Data Science</b>. 
+      I’m passionate about extracting insights from data and applying analytical techniques 
+      to solve complex business problems.</p>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Hitesh Jadhav | Portfolio</p>
-  </footer>
-
-</body>
-</html>
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <ul>
+        <li><b>Languages:</b> Python, SQL</li>
+        <li><b>Libraries:</b> NumPy, Pandas, Matplotlib, Seaborn</li>
+        <li><b>Visualization:</b> Power BI, Tableau, Excel</li>

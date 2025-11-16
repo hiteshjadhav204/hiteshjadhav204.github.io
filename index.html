@@ -44,13 +44,23 @@
     .hero-text h1{margin:0;font-size:24px}
     .hero-text p{margin:6px 0 0;color:#cfe6e0}
 
-    /* Sticky navigation */
+    /* Navigation — changed to non-sticky so it won't float when scrolling */
     nav.main{
-      position:sticky;top:18px;background:transparent;margin-top:14px;z-index:40;
-      display:flex;justify-content:center;
+      /* removed `position: sticky` to prevent the floating pill on scroll */
+      position: static;
+      top: auto;
+      background: transparent;
+      margin-top:14px;
+      z-index: auto;
+      display:flex;
+      justify-content:center;
     }
     nav.main .nav-inner{
-      display:flex;gap:12px;background:rgba(255,255,255,0.02);padding:8px;border-radius:999px;backdrop-filter:blur(4px)
+      display:flex;gap:12px;
+      /* simplified background so it doesn't create the floating pill effect */
+      background: rgba(255,255,255,0.01);
+      padding:8px;border-radius:999px;
+      /* removed backdrop-filter to avoid blurred floating look */
     }
     nav a{color:#e7f6f2;padding:8px 12px;border-radius:10px;font-weight:600}
     nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
@@ -85,7 +95,7 @@
     @media (max-width:980px){
       .wrap{padding:14px}
       .logo{width:74px;height:74px;font-size:20px}
-      nav.main{top:12px}
+      /* nav.main top reset not required anymore */
       .content-column{max-width:100%}
     }
 
@@ -285,7 +295,7 @@
           </div>
         </div>
 
-        <p style="margin-top:16px;font-style:italic;text-align:center;color:var(--muted)">(Click a certificate to view/download PDF)</p>
+        <p style="margin-top:16px;font-style:italic;text-align:center;color:var(--muted)">(Click a certificate to view/download)</p>
       </section>
 
       <!-- Contact -->

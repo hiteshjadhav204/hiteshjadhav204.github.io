@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hitesh Jadhav - Portfolio</title>
 
+  <!-- Optional Google font (works without it if blocked) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -16,8 +17,9 @@
       --card:#ffffff;
       --glass: rgba(255,255,255,0.03);
       --radius:12px;
-      --maxw:900px;
+      --maxw:900px; /* narrower for centered reading */
     }
+    /* Reset & basics */
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:#f4f6f9;color:#222;-webkit-font-smoothing:antialiased}
     a{color:var(--accent);text-decoration:none}
@@ -25,8 +27,10 @@
     img{max-width:100%;display:block}
     button{font-family:inherit}
 
+    /* Container */
     .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
 
+    /* Header */
     header.hero{
       background:linear-gradient(180deg,#0b1220,#071426);
       color:#eaf2f6;padding:30px;border-radius:16px;
@@ -40,53 +44,73 @@
     .hero-text h1{margin:0;font-size:24px}
     .hero-text p{margin:6px 0 0;color:#cfe6e0}
 
+    /* Navigation — changed to non-sticky so it won't float when scrolling */
     nav.main{
+      /* removed `position: sticky` to prevent the floating pill on scroll */
       position: static;
+      top: auto;
+      background: transparent;
       margin-top:14px;
+      z-index: auto;
       display:flex;
       justify-content:center;
     }
     nav.main .nav-inner{
       display:flex;gap:12px;
+      /* simplified background so it doesn't create the floating pill effect */
       background: rgba(255,255,255,0.01);
       padding:8px;border-radius:999px;
+      /* removed backdrop-filter to avoid blurred floating look */
     }
     nav a{color:#e7f6f2;padding:8px 12px;border-radius:10px;font-weight:600}
     nav a:hover{background:rgba(255,255,255,0.04);color:#fff}
 
+    /* Layout: single centered column */
     .content-column{display:block;margin:18px auto;max-width:760px}
     .panel{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
     .panel h2{margin:0 0 10px 0;color:#0b1220}
 
+    /* About card text */
     .about p{line-height:1.7;color:#333;margin:0}
 
+    /* Projects grid */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
     .proj{background:#fbfcfd;padding:14px;border-radius:10px;border:1px solid rgba(15,20,24,0.03)}
     .proj h3{margin:0 0 8px 0;font-size:16px}
     .proj p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
 
+    /* Certificates grid (preserve links exactly) */
     .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
     .cert{background:#fff;padding:12px;border-radius:10px;text-align:center;border:1px solid rgba(13,18,22,0.03)}
     .cert h4{margin:6px 0 8px 0;font-size:14px}
     .cert a{display:inline-block;padding:8px 10px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#0bb39a);color:#031018;font-weight:700;text-decoration:none}
 
+    /* Contact */
     .contact p{margin:6px 0;color:#333}
+
+    /* Footer */
     footer{margin-top:18px;text-align:center;color:#666;font-size:14px;padding-bottom:24px}
 
+    /* Responsive */
     @media (max-width:980px){
       .wrap{padding:14px}
       .logo{width:74px;height:74px;font-size:20px}
+      /* nav.main top reset not required anymore */
       .content-column{max-width:100%}
     }
 
+    /* Small decorative Micro-interactions */
     .fade{opacity:0;transform:translateY(8px);transition:all .45s cubic-bezier(.2,.9,.25,1)}
     .fade.visible{opacity:1;transform:none}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#0bb39a);color:#04121a;font-weight:800;border:none;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--accent)}
   </style>
 </head>
 <body>
   <div class="wrap">
 
-    <header class="hero fade">
+    <!-- Header / Hero -->
+    <header class="hero fade" id="top">
       <div class="logo">HJ</div>
       <div class="hero-text">
         <h1>Hitesh Jadhav</h1>
@@ -94,7 +118,8 @@
       </div>
     </header>
 
-    <nav class="main fade">
+    <!-- Navigation -->
+    <nav class="main fade" aria-label="Main">
       <div class="nav-inner">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -104,62 +129,207 @@
       </div>
     </nav>
 
+    <!-- CENTERED CONTENT COLUMN -->
     <div class="content-column">
 
+      <!-- About -->
       <section id="about" class="panel about fade" style="margin-top:14px">
         <h2>About Me</h2>
-        <p>I’m Hitesh — a Mechanical Engineer who moved into data, now working as a Data Engineer and Business Analyst and founder of Helix Analytics...</p>
+        <p>I’m Hitesh — a Mechanical Engineer who moved into data, now working as a Data Engineer and Business Analyst and founder of Helix Analytics. At Helix, we build data pipelines, dashboards and analyses that turn messy business data into clear, action-ready insights. I focus on data cleaning, visualization and automation so stakeholders can spot trends, measure impact and act with confidence. My approach is practical and hands-on: I pair technical skills (Python, SQL, Power BI) with business sense to deliver work that actually gets used.</p>
       </section>
 
+      <!-- Skills -->
       <section id="skills" class="panel fade" style="margin-top:14px">
         <h2>Skills</h2>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
-          <span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Excel</span><span>Pandas</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">Python</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">SQL</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">Power BI</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">Tableau</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">Excel</span>
+          <span style="background:#f1f6f5;padding:8px 10px;border-radius:8px;font-weight:600">Pandas</span>
         </div>
       </section>
 
+      <!-- Projects -->
       <section id="projects" class="panel fade" style="margin-top:14px">
         <h2>Projects</h2>
-        <div class="projects-grid"></div>
+        <div class="projects-grid" style="margin-top:12px">
+          <div class="proj">
+            <h3>✈️ Flight Price EDA (Python)</h3>
+            <p>Exploratory data analysis using Pandas, NumPy and visualizations to identify pricing trends and support pricing strategy recommendations.</p>
+          </div>
+
+          <div class="proj">
+            <h3>🍷 Wine Quality EDA (Python)</h3>
+            <p>Analysed wine quality dataset to uncover correlations and present findings with clear visualizations.</p>
+          </div>
+
+          <div class="proj">
+            <h3>📱 Google Play Store EDA (Python)</h3>
+            <p>Analyzed app performance metrics and user trends to highlight drivers of ratings and downloads.</p>
+          </div>
+
+          <div class="proj">
+            <h3>🛒 Sales Data Analysis (Power BI)</h3>
+            <p>Interactive Power BI dashboard integrating multiple sources to present KPIs and growth opportunities.</p>
+          </div>
+
+          <div class="proj">
+            <h3>🏥 Insurance Data Analysis (Power BI)</h3>
+            <p>Visualized insurance KPIs and trends for operational and strategic insights.</p>
+          </div>
+
+          <div class="proj">
+            <h3>💳 UPI Transactions (Power BI & Tableau)</h3>
+            <p>Dashboards to analyze transaction patterns across cities, age groups & payment methods.</p>
+          </div>
+
+          <div class="proj">
+            <h3>📊 Excel Dashboards</h3>
+            <p>Pivots & dashboards built in Excel to summarize raw data and present action-ready metrics.</p>
+          </div>
+
+          <div class="proj">
+            <h3>🎓 Student Depression Analysis (SQL + Tableau)</h3>
+            <p>Built visualizations to show relationships between academic pressure, study hours and well-being.</p>
+          </div>
+        </div>
       </section>
 
-      <!-- UPDATED CERTIFICATES -->
+      <!-- Certificates -->
       <section id="certificates" class="panel fade" style="margin-top:14px">
         <h2>Certificates</h2>
         <p style="color:var(--muted);margin-top:8px">(Click to view/download)</p>
 
         <div class="cert-grid" style="margin-top:12px">
-
-          <!-- NEW -->
+          <!-- Certificate links preserved exactly -->
           <div class="cert">
-            <h4>Data Analyst Certificate</h4>
-            <a href="certificates/Data Analyst Certificate.pdf" target="_blank">View Certificate</a>
+            <h4>Python Programming</h4>
+            <a href="certificates/Programming with Python Training - Certificate of Completion.pdf" target="_blank" rel="noopener">View Certificate</a>
           </div>
 
           <div class="cert">
-            <h4>Microsoft DP-700 (Data Engineering)</h4>
-            <a href="certificates/MS_DP-700_page-0001.jpg" target="_blank">View Certificate</a>
+            <h4>Digital Marketing</h4>
+            <a href="certificates/The Fundamentals of Digital Marketing.pdf" target="_blank" rel="noopener">View Certificate</a>
           </div>
 
           <div class="cert">
-            <h4>Azure DP-900 (Data Fundamentals)</h4>
-            <a href="certificates/Az_dp_900.jpg" target="_blank">View Certificate</a>
+            <h4>MATLAB Workshop</h4>
+            <a href="certificates/CERTIFICATE1 Awareness Program on MATLAB-HITESH.pdf" target="_blank" rel="noopener">View Certificate</a>
           </div>
 
+          <div class="cert">
+            <h4>Thermal Engineering</h4>
+            <a href="certificates/BITS.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Renewable Energy</h4>
+            <a href="certificates/Renewable Energy Certificate Newest Hitesh Jadhav.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Mechanical Engineering Degree</h4>
+            <a href="certificates/Degree of Mechanical Engineer-3.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Energy Transition</h4>
+            <a href="certificates/Energy trasition and energy technology.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Nanotechnology Poster</h4>
+            <a href="certificates/UBARGIT_NW_0300.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Basic Coding Course</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_Basic Coding Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>DBMS Course</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_DBMS Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>DSA in CPP</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_DSA in CPP Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Intermediate Coding</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_Intermediate Coding Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Java Nano Degree</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_Java Nano Degree Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Operating Systems</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_Operating Systems Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>Python Nano Degree</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_Python Nano Degree Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>SQL Course</h4>
+            <a href="certificates/p_Hitesh Nitin Jadhav_SQL Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>C Nano Degree</h4>
+            <a href="certificates/pictures_Hitesh Nitin Jadhav_C Nano Degree Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+
+          <div class="cert">
+            <h4>CPP Nano Degree</h4>
+            <a href="certificates/pictures_Hitesh Nitin Jadhav_CPP Nano Degree Course.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+
+        <p style="margin-top:16px;font-style:italic;text-align:center;color:var(--muted)">(Click a certificate to view/download)</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="panel fade" style="margin-top:14px">
+        <h2>Contact</h2>
+        <div class="contact" style="margin-top:8px">
+          <p>📧 Personal Email: <a href="mailto:hiteshjadhav924@gmail.com">hiteshjadhav924@gmail.com</a></p>
+          <p>💼 LinkedIn: <a href="http://www.linkedin.com/in/hitesh-jadhav-8aa81a343" target="_blank" rel="noopener">Hitesh Jadhav</a></p>
         </div>
       </section>
 
-      <section id="contact" class="panel fade" style="margin-top:14px">
-        <h2>Contact</h2>
-        <p>📧 <a href="mailto:hiteshjadhav924@gmail.com">hiteshjadhav924@gmail.com</a></p>
-      </section>
+    </div> <!-- end content-column -->
 
-    </div>
-
-    <footer class="fade">
-      <p>© 2025 Hitesh Jadhav</p>
+    <footer class="fade" style="margin-top:18px">
+      <p>© 2025 Hitesh Jadhav | Portfolio Website</p>
     </footer>
   </div>
 
+  <script>
+    /* small script: reveal on scroll + smooth load animations */
+    document.addEventListener('DOMContentLoaded',()=>{
+      requestAnimationFrame(()=>{ document.querySelectorAll('.fade').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'), 120*i));});
+    });
+
+    // smooth scrolling for in-page anchors (enhances older browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const t = this.getAttribute('href');
+        if(t && t.startsWith('#')){
+          const el = document.querySelector(t);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); history.replaceState(null,'',t); }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
